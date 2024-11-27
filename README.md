@@ -1,6 +1,6 @@
 # Deep Neural Networks Multi-Task Learning Demo (DNN_MTL_predict)
 
-The goal of this project is to build a multi-task learning neural network model to predict three different tasks related to travel: travel mode, travel purpose, and number of stops. The project uses deep learning techniques and is implemented based on the PyTorch framework.
+Actually this project is a MTL assignsment. The goal of this project is to build a multi-task learning neural network model to predict three different tasks related to travel: travel mode, travel purpose, and number of stops. The project uses deep learning techniques and is implemented based on the PyTorch framework.
 
 #### Key Technical Points
 
@@ -19,5 +19,78 @@ The goal of this project is to build a multi-task learning neural network model 
 
 #### Example Input and Output
 
-- **Input Features**: A list of six features, e.g., `[18, 0, 56, 1, 3, 0]`.
+- **Input Features**: A list of six features, e.g., `[4, 1, 37, 0, 2, 1]`.
 - **Output Results**: Three predicted values representing travel mode, travel purpose, and number of stops.
+
+
+
+### Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/enimo/dnn_mtl_predict.git
+    cd dnn_mtl_predict
+    ```
+
+2. Create a virtual environment and activate it:
+
+    ```bash
+    # if you are mac os
+	CONDA_SUBDIR=osx-arm64 conda create -n predict_traffic python=3.11
+	conda activate predict_traffic
+    ```
+
+3. Install the required packages:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+### Data Preparation
+
+Prepare your dataset with the following columns:
+
+- `feature1`
+- `feature2`
+- `feature3`
+- `feature4`
+- `feature5`
+- `feature6`
+- `mode` (target for travel mode)
+- `purpose` (target for travel purpose)
+- `stops` (target for number of stops)
+
+Ensure your data is in a CSV file format, and put it in current ROOT directory.
+
+### Training
+
+1. Place your dataset in the project directory.
+
+2. Run the training script:
+
+    ```bash
+    python train2.py
+    ```
+
+    This will train the model and save the trained model parameters to `traffic_model.pth` and the scaler to `scaler.pkl`.
+
+### Testing
+
+1. Ensure you have the trained model (`traffic_model.pth`) and the scaler (`scaler.pkl`) in the project directory.
+
+2. Run the testing script with sample input features:
+
+    ```bash
+    python test2.py  
+    ```
+
+    This will output the predicted travel mode, travel purpose, and number of stops.
+
+### Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+### License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
