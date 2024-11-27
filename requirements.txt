@@ -1,0 +1,16 @@
+numpy<2.0.0
+pandas
+scikit-learn
+torch
+joblib
+
+#torch==1.9.0
+#joblib==1.0.1
+#numpy==1.21.0
+
+#tqdm
+#vector_quantize_pytorch
+#transformers>=4.41.1
+#vocos
+#gradio
+
