@@ -82,7 +82,7 @@ Ensure your data is in a CSV file format, and put it in current ROOT directory.
 2. Run the testing script with sample input features:
 
     ```bash
-    python test2.py  
+    python test2.py  --features 4 1 37 0 2 0
     ```
 
     This will output the predicted travel mode, travel purpose, and number of stops.

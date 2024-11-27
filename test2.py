@@ -3,6 +3,7 @@ import joblib
 import numpy as np
 import torch.nn as nn
 import pandas as pd
+import argparse
 
 # 定义模型
 class TrafficModel(nn.Module):
@@ -85,21 +86,41 @@ def predict_travel(features):
     
     return mode_pred, purpose_pred, stops_pred
 
+
 # 示例输入特征
 # 17.857914  0   56  1   3     0
 # input_features = [18, 0, 56, 1, 3, 0]  # 1-1-1
 # input_features = [4, 1, 37, 0, 2, 1] # 3-3-1 ok
 # input_features = [7, 0, 50, 1, 2, 0] # 1-1-1
 # input_features = [4, 0, 36, 1, 4, 1] # 1-1-3
-# input_features = [4, 0, 36, 1, 4, 1] # 1-1-3
+# input_features = [4, 1, 37, 0, 2, 0] # 1-1-3 ok
 
 
 
 # 获取预测结果
-mode_pred, purpose_pred, stops_pred = predict_travel(input_features)
+# mode_pred, purpose_pred, stops_pred = predict_travel(input_features)
 
 # 打印预测结果
+# print(f'Predicted Number of Stops: {stops_pred+1}')
+# print(f'Predicted Travel Purpose-chain_type: {purpose_pred+1}')
+# print(f'Predicted Travel Mode-chain_modepattern: {mode_pred+1}')
 
-print(f'Predicted Number of Stops: {stops_pred+1}')
-print(f'Predicted Travel Purpose-chain_type: {purpose_pred+1}')
-print(f'Predicted Travel Mode-chain_modepattern: {mode_pred+1}')
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Predict travel mode, purpose, and number of stops.')
+    parser.add_argument('--features', nargs=6, type=float, required=True, help='Input features for prediction')
+    args = parser.parse_args()
+    
+    features = args.features
+    
+    # 获取预测结果
+    mode_pred, purpose_pred, stops_pred = predict_travel(features)
+    
+    # 打印预测结果
+    print(f'Predicted Number of Stops: {stops_pred + 1}')
+    print(f'Predicted Travel Purpose-chain_type: {purpose_pred + 1}')
+    print(f'Predicted Travel Mode-chain_modepattern: {mode_pred + 1}')
+
+if __name__ == '__main__':
+    main()
