@@ -97,7 +97,7 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 # 训练模型
-num_epochs = 50
+num_epochs = 20 #  10 - 20 - 50
 for epoch in range(num_epochs):
     model.train()
     running_loss = 0.0
