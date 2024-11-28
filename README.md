@@ -1,6 +1,6 @@
 # Deep Neural Networks Multi-Task Learning Demo (DNN_MTL_predict)
 
-Actually this project is a MTL assignsment for Dr. Zhang. The goal of this project is to build a multi-task learning neural network model to predict three different tasks related to travel: travel mode, travel purpose, and number of stops. The project uses deep learning techniques and is implemented based on the PyTorch framework.
+This project is a MTL assignsment for Dr. Zhang. The goal of this project is to build a multi-task learning neural network model to predict three different tasks related to travel: travel mode, travel purpose, and number of stops. The project uses deep learning techniques and is implemented based on the PyTorch framework.
 
 #### Key Technical Points
 
